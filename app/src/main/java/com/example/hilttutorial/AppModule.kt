@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.internal.managers.ApplicationComponentManager
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -12,5 +13,12 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideTestString() = "This is dummy string we will inject"
+    @Named("String1")
+    fun provideTestString1() = "This is dummy string we will inject"
+
+    @Singleton
+    @Provides
+    @Named("String2")
+    fun provideTestString2() = "This is dummy string we will inject as well"
+
 }
